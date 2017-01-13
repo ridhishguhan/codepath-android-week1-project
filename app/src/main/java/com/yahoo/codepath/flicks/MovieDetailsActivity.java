@@ -5,7 +5,9 @@ import com.yahoo.codepath.flicks.api.MovieApiHelper;
 import com.yahoo.codepath.flicks.api.MovieListItem;
 
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -34,8 +36,9 @@ public class MovieDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_movie_details);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ButterKnife.bind(this);
 
         MovieListItem movie = getIntent().getParcelableExtra(EX_MOVIE_DATA);
@@ -43,5 +46,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
         mTitle.setText(movie.getTitle());
         mOverview.setText(movie.getOverview());
         mRatingBar.setRating(movie.getAverageRating() / 2);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

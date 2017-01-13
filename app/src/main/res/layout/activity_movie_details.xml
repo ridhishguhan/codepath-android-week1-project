@@ -15,13 +15,13 @@
         android:id="@+id/backdrop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitStart" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_medium" />
+        android:textSize="@dimen/font_size_huge" />
 
     <TextView
         android:id="@+id/release_date"
@@ -38,6 +38,6 @@
         android:id="@+id/overview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_medium" />
+        android:textSize="@dimen/font_size_large" />
 
 </LinearLayout>
