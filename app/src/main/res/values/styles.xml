@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MovieTitle">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MovieDescription">
+        <item name="android:textSize">@dimen/font_size_medium</item>
+    </style>
+</resources>
