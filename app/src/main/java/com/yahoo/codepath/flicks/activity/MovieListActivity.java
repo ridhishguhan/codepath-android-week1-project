@@ -1,7 +1,9 @@
-package com.yahoo.codepath.flicks;
+package com.yahoo.codepath.flicks.activity;
 
+import com.yahoo.codepath.flicks.adapter.MovieListAdapter;
+import com.yahoo.codepath.flicks.R;
 import com.yahoo.codepath.flicks.api.MovieApiHelper;
-import com.yahoo.codepath.flicks.api.MovieListItem;
+import com.yahoo.codepath.flicks.api.Movie;
 import com.yahoo.codepath.flicks.api.MoviesResponse;
 
 import android.content.Intent;
@@ -76,7 +78,7 @@ public class MovieListActivity extends AppCompatActivity {
         });
     }
 
-    private void updateListWithMovies(List<MovieListItem> results) {
+    private void updateListWithMovies(List<Movie> results) {
         boolean isPortraitOrientation = getResources().getConfiguration().orientation == 1;
         runOnUiThread(() -> {
             mSwipeRefreshLayout.setRefreshing(false);
@@ -87,7 +89,7 @@ public class MovieListActivity extends AppCompatActivity {
                         showBackdropImage ? result.getBackdropPath() : result.getPosterPath();
                 return new MovieListAdapter.IMovieListItem() {
                     @Override
-                    public MovieListItem getApiMovieItem() {
+                    public Movie getApiMovieItem() {
                         return result;
                     }
 

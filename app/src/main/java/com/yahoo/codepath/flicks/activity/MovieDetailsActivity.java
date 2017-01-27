@@ -1,8 +1,9 @@
-package com.yahoo.codepath.flicks;
+package com.yahoo.codepath.flicks.activity;
 
 import com.squareup.picasso.Picasso;
+import com.yahoo.codepath.flicks.R;
 import com.yahoo.codepath.flicks.api.MovieApiHelper;
-import com.yahoo.codepath.flicks.api.MovieListItem;
+import com.yahoo.codepath.flicks.api.Movie;
 
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -41,7 +42,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        MovieListItem movie = getIntent().getParcelableExtra(EX_MOVIE_DATA);
+        Movie movie = getIntent().getParcelableExtra(EX_MOVIE_DATA);
         Picasso.with(this).load(MovieApiHelper.IMAGE_BASE_URL + movie.getBackdropPath()).into(mPoster);
         mTitle.setText(movie.getTitle());
         mOverview.setText(movie.getOverview());

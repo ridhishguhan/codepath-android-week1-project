@@ -10,16 +10,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MovieListActivity">
+        <activity android:name=".activity.MovieListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.MovieListActivityMVP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
-            android:name=".MovieDetailsActivity"
-            android:parentActivityName="com.yahoo.codepath.flicks.MovieListActivity" />
+            android:name=".activity.MovieDetailsActivity"
+            android:parentActivityName="com.yahoo.codepath.flicks.activity.MovieListActivity" />
     </application>
 
 </manifest>

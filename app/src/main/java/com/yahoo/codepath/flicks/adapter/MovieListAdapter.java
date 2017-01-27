@@ -1,7 +1,8 @@
-package com.yahoo.codepath.flicks;
+package com.yahoo.codepath.flicks.adapter;
 
 import com.squareup.picasso.Picasso;
-import com.yahoo.codepath.flicks.api.MovieListItem;
+import com.yahoo.codepath.flicks.R;
+import com.yahoo.codepath.flicks.api.Movie;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,7 +90,7 @@ public class MovieListAdapter extends BaseAdapter {
     }
 
     public interface IMovieListItem {
-        MovieListItem getApiMovieItem();
+        Movie getApiMovieItem();
         String getImagePath();
         boolean shouldShowTitleAndDescription();
     }

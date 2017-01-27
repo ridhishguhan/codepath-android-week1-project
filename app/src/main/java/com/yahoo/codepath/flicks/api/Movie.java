@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class MovieListItem implements Parcelable {
+public class Movie implements Parcelable {
     @SerializedName("id")
     private long mId;
 
@@ -24,7 +24,7 @@ public class MovieListItem implements Parcelable {
     @SerializedName("vote_average")
     private float mAverageRating;
 
-    protected MovieListItem(Parcel in) {
+    protected Movie(Parcel in) {
         mId = in.readLong();
         mTitle = in.readString();
         mOverview = in.readString();
@@ -72,15 +72,15 @@ public class MovieListItem implements Parcelable {
         parcel.writeFloat(mAverageRating);
     }
 
-    public static final Creator<MovieListItem> CREATOR = new Creator<MovieListItem>() {
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override
-        public MovieListItem createFromParcel(Parcel in) {
-            return new MovieListItem(in);
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
         }
 
         @Override
-        public MovieListItem[] newArray(int size) {
-            return new MovieListItem[size];
+        public Movie[] newArray(int size) {
+            return new Movie[size];
         }
     };
 }
